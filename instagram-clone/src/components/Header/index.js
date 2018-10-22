@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-{/* Created header Component to contain logo and name*/}
+/* Created header Component to contain logo and name*/
 class Header extends React.Component {
   render(){
     return (
