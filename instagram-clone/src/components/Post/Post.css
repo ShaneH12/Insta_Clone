@@ -39,6 +39,10 @@
   width: 100%;
 }
 
+.Post-caption {
+  padding: 16px 16px;
+}
+
 .Post-caption strong {
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
