@@ -1,5 +1,6 @@
-Creating a clone of the popular app Instagram using React a Javascript library.
+## Instagram Clone App
 
+Creating a clone of the popular app Instagram using React a Javascript library.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
