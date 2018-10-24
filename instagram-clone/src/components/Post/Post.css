@@ -48,6 +48,10 @@
   font-weight: bold;
 }
 
+.alignCaption {
+  display: flex;
+}
+
 .vjs-fade-out {
   display: none;
   visibility: hidden;

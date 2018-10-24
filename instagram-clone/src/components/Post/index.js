@@ -30,7 +30,9 @@ class Post extends Component {
           </div>
         </div>
         <div className="Post-caption">
-          <strong>{nickname}</strong> {caption}
+          <div className="alignCaption">
+            <strong>{nickname}</strong> {caption}
+          </div>
         </div>
       </article>
   }
