@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import "./Post.css";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
-
-/* Created Post Component that displays post header, content and caption. */
 class Post extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     const nickname = this.props.nickname;
     const avatar = this.props.avatar;
     const image = this.props.image;
     const caption = this.props.caption;
-
-    return <article className="Post" ref="Post">
+    return (
+      <article className="Post" ref="Post">
         <header>
           <div className="Post-user">
             <div className="Post-user-avatar">
@@ -30,11 +28,10 @@ class Post extends Component {
           </div>
         </div>
         <div className="Post-caption">
-          <div className="alignCaption">
-            <strong>{nickname}</strong> {caption}
-          </div>
+          <strong>{nickname}</strong> {caption}
         </div>
       </article>
+    );
   }
 }
 export default Post;
