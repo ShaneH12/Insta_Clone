@@ -1,0 +1,18 @@
+{
+  "name": "help",
+  "version": "1.0.0",
+  "description": "\"GraphQL server for Instagram Clone Application\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "author": "\"\"",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "pusher": "^2.1.3"
+  }
+}
