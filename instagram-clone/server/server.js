@@ -2,6 +2,9 @@ let express = require("express");
 let graphqlHTTP = require("express-graphql");
 let { buildSchema } = require("graphql");
 let cors = require("cors");
+let Pusher = require("pusher");
+let bodyParser = require("body-parser");
+let Multipart = require("connect-multiparty");
 
 // Built out schema
 let schema = buildSchema(`
@@ -81,9 +84,20 @@ let root = {
   }
 };
 
+let pusher = new Pusher({
+  appId: '635534',
+  key: '30d8f0ab55b75b6b31b9',
+  secret: '735bca2aacd4916a3872',
+  cluster: 'us2',
+  encrypted: true
+});
+
 // creates express app
 let app = express();
 app.use(cors());
+
+let multipartMiddleware = new Multipart();
+
 app.use(
   "/graphql",
   graphqlHTTP({
@@ -92,5 +106,25 @@ app.use(
     graphiql: true
   })
 );
+
+// adding a new post
+app.post('/newpost', multipartMiddleware, (req,res) => {
+  // sample post
+  let post = {
+    user : {
+      nickname : req.body.name,
+      avatar : req.body.avatar
+    },
+    image : req.body.image,
+    caption : req.body.caption
+  }
+
+  // pusher event
+  pusher.trigger("posts-channel", "new-post", {
+    post
+  });
+
+  return res.json({status : "Post created"});
+});
 
 app.listen(4000);
