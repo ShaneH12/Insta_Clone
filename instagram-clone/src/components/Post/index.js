@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+
 import "./Post.css";
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
 
 class Post extends Component {
 
@@ -28,10 +27,13 @@ class Post extends Component {
           </div>
         </div>
         <div className="Post-caption">
-          <strong>{nickname}</strong> {caption}
+        <div className="alignCaption">
+          <strong>{nickname}:</strong> {caption}
+        </div>
         </div>
       </article>
     );
   }
 }
+
 export default Post;

@@ -9,7 +9,7 @@ import Posts from "./components/Posts";
 
 // creates Apollo Client. URI is that of the GraphQL server.
 const client = new ApolloClient({
-  uri : "http://localhost:4000"
+  uri: "http://localhost:4000/graphql"
 });
 
 class App extends Component{
